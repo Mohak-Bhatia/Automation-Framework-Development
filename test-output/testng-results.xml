@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results retried="4" ignored="0" total="12" passed="6" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-06-09T22:23:18 IST" name="Suite" finished-at="2026-06-09T22:24:43 IST" duration-ms="84385">
+    <groups>
+      <group name="Products And Cart">
+        <method signature="ErrorValidation.ProductsCheck(java.util.Map)[pri:0, instance:tests.ErrorValidation@5f20155b]" name="ProductsCheck" class="tests.ErrorValidation"/>
+      </group> <!-- Products And Cart -->
+    </groups>
+    <test started-at="2026-06-09T22:23:18 IST" name="Validations" finished-at="2026-06-09T22:24:17 IST" duration-ms="58791">
+      <class name="tests.ErrorValidation">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:23:18 IST" name="LaunchApplication" finished-at="2026-06-09T22:23:30 IST" duration-ms="11274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="InvalidLogin(java.util.Map)[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:23:30 IST" name="InvalidLogin" data-provider="InvalidLoginCredentials" finished-at="2026-06-09T22:23:32 IST" duration-ms="2648" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Moh@bha1702, email=avina@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InvalidLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:23:32 IST" name="tearDown" finished-at="2026-06-09T22:23:35 IST" duration-ms="3216" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:23:35 IST" name="LaunchApplication" finished-at="2026-06-09T22:23:40 IST" duration-ms="4526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="InvalidLogin(java.util.Map)[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:23:40 IST" name="InvalidLogin" data-provider="InvalidLoginCredentials" finished-at="2026-06-09T22:23:42 IST" duration-ms="1682" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=4408@100Mb, email=anishka3108@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InvalidLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:23:42 IST" name="tearDown" finished-at="2026-06-09T22:23:45 IST" duration-ms="3043" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:23:45 IST" name="LaunchApplication" finished-at="2026-06-09T22:23:48 IST" duration-ms="3368" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="ProductsCheck(java.util.Map)[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:23:48 IST" name="ProductsCheck" data-provider="LoginCredentials" finished-at="2026-06-09T22:23:55 IST" duration-ms="7261" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=2204@50Mb, email=bhatiamohak1702@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductsCheck -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:23:55 IST" name="tearDown" finished-at="2026-06-09T22:23:56 IST" duration-ms="353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:23:56 IST" name="LaunchApplication" finished-at="2026-06-09T22:24:00 IST" duration-ms="4391" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method retried="true" signature="ProductsCheck(java.util.Map)[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:24:00 IST" name="ProductsCheck" data-provider="LoginCredentials" finished-at="2026-06-09T22:24:07 IST" duration-ms="7018" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Ani@bha3108, email=bhatiaanishka3108@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at tests.ErrorValidation.ProductsCheck(ErrorValidation.java:42)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductsCheck -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:24:07 IST" name="tearDown" finished-at="2026-06-09T22:24:08 IST" duration-ms="376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:24:08 IST" name="LaunchApplication" finished-at="2026-06-09T22:24:11 IST" duration-ms="3650" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="ProductsCheck(java.util.Map)[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:24:11 IST" name="ProductsCheck" data-provider="LoginCredentials" finished-at="2026-06-09T22:24:16 IST" duration-ms="5163" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Ani@bha3108, email=bhatiaanishka3108@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductsCheck -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@5f20155b]" started-at="2026-06-09T22:24:16 IST" name="tearDown" finished-at="2026-06-09T22:24:17 IST" duration-ms="642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.ErrorValidation -->
+    </test> <!-- Validations -->
+    <test started-at="2026-06-09T22:23:18 IST" name="UserStory" finished-at="2026-06-09T22:24:43 IST" duration-ms="84385">
+      <class name="tests.FunctionalTests">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:23:18 IST" name="LaunchApplication" finished-at="2026-06-09T22:23:28 IST" duration-ms="9679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="OpenSiteAndLogin(java.util.Map)[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:23:28 IST" name="OpenSiteAndLogin" data-provider="LoginCredentials" finished-at="2026-06-09T22:23:39 IST" duration-ms="10642" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=2204@50Mb, email=bhatiamohak1702@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenSiteAndLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:23:39 IST" name="tearDown" finished-at="2026-06-09T22:23:42 IST" duration-ms="3305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:23:42 IST" name="LaunchApplication" finished-at="2026-06-09T22:23:48 IST" duration-ms="6184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method retried="true" signature="OpenSiteAndLogin(java.util.Map)[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:23:48 IST" name="OpenSiteAndLogin" data-provider="LoginCredentials" finished-at="2026-06-09T22:23:58 IST" duration-ms="9332" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Ani@bha3108, email=bhatiaanishka3108@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at tests.FunctionalTests.OpenSiteAndLogin(FunctionalTests.java:38)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenSiteAndLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:23:58 IST" name="tearDown" finished-at="2026-06-09T22:23:58 IST" duration-ms="568" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:23:58 IST" name="LaunchApplication" finished-at="2026-06-09T22:24:03 IST" duration-ms="4498" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="OpenSiteAndLogin(java.util.Map)[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:03 IST" name="OpenSiteAndLogin" data-provider="LoginCredentials" finished-at="2026-06-09T22:24:11 IST" duration-ms="8441" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Ani@bha3108, email=bhatiaanishka3108@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OpenSiteAndLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:11 IST" name="tearDown" finished-at="2026-06-09T22:24:13 IST" duration-ms="1921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:13 IST" name="LaunchApplication" finished-at="2026-06-09T22:24:18 IST" duration-ms="5447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method retried="true" signature="VerifyOrderHistory(java.util.Map)[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:18 IST" name="VerifyOrderHistory" data-provider="LoginCredentials" finished-at="2026-06-09T22:24:21 IST" depends-on-methods="tests.FunctionalTests.OpenSiteAndLogin" duration-ms="2365" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=2204@50Mb, email=bhatiamohak1702@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at tests.FunctionalTests.VerifyOrderHistory(FunctionalTests.java:52)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyOrderHistory -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:21 IST" name="tearDown" finished-at="2026-06-09T22:24:22 IST" duration-ms="779" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:22 IST" name="LaunchApplication" finished-at="2026-06-09T22:24:28 IST" duration-ms="6092" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="VerifyOrderHistory(java.util.Map)[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:28 IST" name="VerifyOrderHistory" data-provider="LoginCredentials" finished-at="2026-06-09T22:24:29 IST" depends-on-methods="tests.FunctionalTests.OpenSiteAndLogin" duration-ms="1489" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=2204@50Mb, email=bhatiamohak1702@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at tests.FunctionalTests.VerifyOrderHistory(FunctionalTests.java:52)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyOrderHistory -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:29 IST" name="tearDown" finished-at="2026-06-09T22:24:30 IST" duration-ms="395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:30 IST" name="LaunchApplication" finished-at="2026-06-09T22:24:33 IST" duration-ms="3329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method retried="true" signature="VerifyOrderHistory(java.util.Map)[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:33 IST" name="VerifyOrderHistory" data-provider="LoginCredentials" finished-at="2026-06-09T22:24:35 IST" depends-on-methods="tests.FunctionalTests.OpenSiteAndLogin" duration-ms="1629" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Ani@bha3108, email=bhatiaanishka3108@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at tests.FunctionalTests.VerifyOrderHistory(FunctionalTests.java:52)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyOrderHistory -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:35 IST" name="tearDown" finished-at="2026-06-09T22:24:36 IST" duration-ms="698" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:36 IST" name="LaunchApplication" finished-at="2026-06-09T22:24:40 IST" duration-ms="4040" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="VerifyOrderHistory(java.util.Map)[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:40 IST" name="VerifyOrderHistory" data-provider="LoginCredentials" finished-at="2026-06-09T22:24:41 IST" depends-on-methods="tests.FunctionalTests.OpenSiteAndLogin" duration-ms="1756" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=Ani@bha3108, email=bhatiaanishka3108@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at tests.FunctionalTests.VerifyOrderHistory(FunctionalTests.java:52)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyOrderHistory -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FunctionalTests@62656be4]" started-at="2026-06-09T22:24:42 IST" name="tearDown" finished-at="2026-06-09T22:24:43 IST" duration-ms="1110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.FunctionalTests -->
+    </test> <!-- UserStory -->
+  </suite> <!-- Suite -->
+</testng-results>
