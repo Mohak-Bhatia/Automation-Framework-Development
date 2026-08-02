@@ -34,7 +34,7 @@ jobs:
       - name: Run TestNG End to End Functional Tests
         
         run: |
-          echo "🚀 Starting Tests...
+          echo "🚀 Starting Tests..."
           mvn clean test
 
       - name: Upload surefire reports
