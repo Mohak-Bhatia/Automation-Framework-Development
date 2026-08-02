@@ -35,7 +35,7 @@ jobs:
         
         run: |
           echo "🚀 Starting Tests..."
-          mvn clean test
+          mvn test -Dbrowser="Edge" -PGroups
 
       # Add these steps to the job that runs tests (after the mvn test step)
       - name: Upload surefire reports
