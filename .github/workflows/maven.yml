@@ -1,35 +1,52 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Java CI with Maven
+name: End-to-End Functional and Validation Web/UI Tests
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  schedule:
+    # Runs at 3:30 AM UTC, which is 9:00 AM IST
+    # Monday to Friday
+    - cron: '30 3 * * 1-5'
+  
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+      
+      - name: Build with Maven (Download Dependencies)
+        run: mvn clean install -Dbrowser="Chrome" -PAll
 
-    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+      - name: Create Maven settings security file
+        run: |
+          mkdir -p ~/.m2
+          echo '<settingsSecurity><master>ignored</master></settingsSecurity>' > ~/.m2/settings-security.xml
+      
+      - name: Run TestNG End to End Functional Tests
+        
+        run: |
+          echo "🚀 Starting Tests...
+          mvn clean test
+      
+      - name: Upload test results (Always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TestNG-test-reports
+          path: reports/
+          retention-days: 30
+      
+      - name: Publish Test Report Summary
+        if: always()
+        run: |
+          echo "✅ Test execution completed"
+          echo "📊 Reports available in artifacts"
