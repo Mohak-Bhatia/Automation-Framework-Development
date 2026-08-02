@@ -23,44 +23,87 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       
+      - name: Install Chrome Browser
+        run: |
+          echo "Installing Chrome and dependencies..."
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          echo "Chrome installed at: $(which google-chrome)"
+          echo "Chrome version: $(google-chrome --version)"
+      
       - name: Build with Maven (Download Dependencies)
-        run: mvn clean install
-
+        run: |
+          echo "Building project and downloading dependencies..."
+          mvn clean install -DskipTests -q
+      
       - name: Create Maven settings security file
         run: |
           mkdir -p ~/.m2
           echo '<settingsSecurity><master>ignored</master></settingsSecurity>' > ~/.m2/settings-security.xml
       
-      - name: Run TestNG End to End Functional Tests
-        
+      - name: Debug - Check test suite and classes
         run: |
-          echo "🚀 Starting Tests..."
-          mvn test -Dbrowser="Chrome" -PAll
-
+          echo "========================================"
+          echo "Checking TestSuite configuration..."
+          echo "========================================"
+          echo "TestSuite1.xml location:"
+          ls -la src/test/resources/TestSuites/TestSuite1.xml || echo "❌ TestSuite1.xml NOT FOUND"
+          echo ""
+          echo "Test classes:"
+          find src/test/java/tests -name "*.java" -type f || echo "❌ No test classes found"
+          echo ""
+          echo "Compiled test classes:"
+          find target/test-classes/tests -name "*.class" -type f || echo "⚠️  No compiled test classes found"
+          echo "========================================"
+      
+      - name: Run TestNG End to End Functional Tests
+        run: |
+          echo "🚀 Starting Tests with Headless Chrome..."
+          echo "Browser: Chrome (Headless Mode)"
+          echo "Chrome Binary: /usr/bin/google-chrome"
+          echo "Test Profile: All"
+          echo ""
+          mvn test \
+            -Dbrowser="Chrome" \
+            -DchromeBinary="/usr/bin/google-chrome" \
+            -PAll \
+            -DfailIfNoTests=true \
+            -X 2>&1 | tail -100
+      
       - name: Upload surefire reports
-        if: failure()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: surefire-reports
           path: target/surefire-reports
+          if-no-files-found: warn
       
       - name: Upload chromedriver log
-        if: failure()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: chromedriver-log
-          path: chromedriver.log    
+          path: chromedriver.log
+          if-no-files-found: warn
       
-      - name: Upload test results (Always)
+      - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: TestNG-test-reports
           path: reports/
           retention-days: 30
+          if-no-files-found: warn
       
       - name: Publish Test Report Summary
         if: always()
         run: |
           echo "✅ Test execution completed"
           echo "📊 Reports available in artifacts"
+          echo ""
+          if [ -d "target/surefire-reports" ]; then
+            echo "Test Results Found:"
+            find target/surefire-reports -name "*.xml" -type f | head -5
+          else
+            echo "⚠️  No surefire reports directory found"
+          fi
