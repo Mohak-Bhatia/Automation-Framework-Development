@@ -30,9 +30,7 @@ public class BaseTest {
 	
 	public WebDriver Initializer() throws IOException {
 		if(System.getProperty("browser").equalsIgnoreCase("Chrome"))
-		{
-<<<<<<< HEAD
-			
+		{	
 			WebDriverManager.chromedriver().setup();
 
             ChromeOptions chromeOptions = new ChromeOptions();
@@ -86,14 +84,7 @@ public class BaseTest {
                 .build();
 
             driver = new EdgeDriver(edgeService, edgeOptions);
-=======
-			driver=new ChromeDriver();
 		}
-		else if (System.getProperty("browser").equalsIgnoreCase("Edge")) {
-			driver=new EdgeDriver();
->>>>>>> cd2ed57ab325f60cb89bc846c8272d4db6fe23c3
-		}
-		
 		return driver;
 	}
 	
