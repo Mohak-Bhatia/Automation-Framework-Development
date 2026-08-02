@@ -34,7 +34,7 @@ jobs:
       - name: Run TestNG Products and Cart Functional Tests
         
         run: |
-          echo "🚀 Starting Tests...
+          echo "🚀 Starting Tests..."
           mvn clean test
 
       # Add these steps to the job that runs tests (after the mvn test step)
