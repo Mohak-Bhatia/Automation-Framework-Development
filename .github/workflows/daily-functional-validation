@@ -1,0 +1,52 @@
+name: End-to-End Functional and Validation Web/UI Tests
+
+on:
+  schedule:
+    # Runs at 3:30 AM UTC, which is 9:00 AM IST
+    # Monday to Friday
+    - cron: '30 3 * * 1-5'
+  
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+      
+      - name: Build with Maven (Download Dependencies)
+        run: mvn clean install -Dbrowser="Chrome" -PAll
+
+      - name: Create Maven settings security file
+        run: |
+          mkdir -p ~/.m2
+          echo '<settingsSecurity><master>ignored</master></settingsSecurity>' > ~/.m2/settings-security.xml
+      
+      - name: Run TestNG End to End Functional Tests
+        
+        run: |
+          echo "🚀 Starting Tests...
+          mvn clean test
+      
+      - name: Upload test results (Always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TestNG-test-reports
+          path: reports/
+          retention-days: 30
+      
+      - name: Publish Test Report Summary
+        if: always()
+        run: |
+          echo "✅ Test execution completed"
+          echo "📊 Reports available in artifacts"
