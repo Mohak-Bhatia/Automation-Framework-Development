@@ -36,6 +36,21 @@ jobs:
         run: |
           echo "🚀 Starting Tests...
           mvn clean test
+
+      # Add these steps to the job that runs tests (after the mvn test step)
+      - name: Upload surefire reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: target/surefire-reports
+      
+      - name: Upload chromedriver log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chromedriver-log
+          path: chromedriver.log    
       
       - name: Upload test results (Always)
         if: always()
