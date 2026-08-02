@@ -35,7 +35,7 @@ jobs:
         
         run: |
           echo "🚀 Starting Tests..."
-          mvn clean test
+          mvn test -Dbrowser="Chrome" -PAll
 
       - name: Upload surefire reports
         if: failure()
