@@ -23,11 +23,11 @@ public class BaseTest {
 	public AbstractComponents abstractComponents;
 	
 	public WebDriver Initializer() throws IOException {
-		if(System.getenv("browser").equalsIgnoreCase("Chrome"))
+		if(System.getProperty("browser").equalsIgnoreCase("Chrome"))
 		{
 			driver=new ChromeDriver();
 		}
-		else if (System.getenv("browser").equalsIgnoreCase("Edge")) {
+		else if (System.getProperty("browser").equalsIgnoreCase("Edge")) {
 			driver=new EdgeDriver();
 		}
 		
