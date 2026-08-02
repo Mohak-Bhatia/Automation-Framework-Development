@@ -24,7 +24,7 @@ jobs:
           distribution: 'temurin'
       
       - name: Build with Maven (Download Dependencies)
-        run: mvn clean install -Dbrowser="Edge" -PGroups
+        run: mvn clean install
 
       - name: Create Maven settings security file
         run: |
