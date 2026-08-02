@@ -23,14 +23,14 @@ public class BaseTest {
 	public AbstractComponents abstractComponents;
 	
 	public WebDriver Initializer() throws IOException {
-//		if(System.getProperty("browser").equalsIgnoreCase("Chrome"))
-//		{
-//			driver=new ChromeDriver();
-//		}
-//		else if (System.getProperty("browser").equalsIgnoreCase("Edge")) {
-//			driver=new EdgeDriver();
-//		}
-		driver=new ChromeDriver();
+		if(System.getProperty("browser").equalsIgnoreCase("Chrome"))
+		{
+			driver=new ChromeDriver();
+		}
+		else if (System.getProperty("browser").equalsIgnoreCase("Edge")) {
+			driver=new EdgeDriver();
+		}
+		
 		return driver;
 	}
 	
