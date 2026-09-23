@@ -33,7 +33,6 @@ Engineered a robust, enterprise-grade test automation framework leveraging **Sel
 
 - **Maven Build System**: Configured Maven for project dependency management, build automation, and plugin orchestration using Maven Surefire Plugin (v3.5.6) for streamlined test execution.
 - **Maven Profiles**: Created multiple Maven profiles (All, Groups) enabling dynamic test suite selection and environment-specific configurations through command-line parameters.
-- **Jenkins CI/CD Pipeline**: Practiced and implemented continuous integration using Jenkins, automating test execution, build processes, and deployment workflows to ensure rapid feedback and code quality assurance.
 
 **Additional Technologies:**
 
