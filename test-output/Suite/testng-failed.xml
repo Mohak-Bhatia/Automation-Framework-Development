@@ -8,7 +8,7 @@
     <classes>
       <class name="tests.FunctionalTests">
         <methods>
-          <include name="VerifyOrderHistory" invocation-numbers="0 1"/>
+          <include name="VerifyOrderHistory"/>
           <include name="tearDown"/>
           <include name="LaunchApplication"/>
           <include name="OpenSiteAndLogin"/>
@@ -16,4 +16,16 @@
       </class> <!-- tests.FunctionalTests -->
     </classes>
   </test> <!-- UserStory(failed) -->
+  <test thread-count="5" parallel="tests" name="Validations(failed)">
+    <classes>
+      <class name="tests.ErrorValidation">
+        <methods>
+          <include name="ProductsCheck"/>
+          <include name="tearDown"/>
+          <include name="InvalidLogin"/>
+          <include name="LaunchApplication"/>
+        </methods>
+      </class> <!-- tests.ErrorValidation -->
+    </classes>
+  </test> <!-- Validations(failed) -->
 </suite> <!-- Failed suite [Suite] -->

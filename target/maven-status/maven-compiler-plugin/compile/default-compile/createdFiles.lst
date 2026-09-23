@@ -1,0 +1,7 @@
+pageObjects\LandingPage.class
+pageObjects\OrdersPage.class
+utils\TestReportingService.class
+pageObjects\CartPage.class
+pageObjects\ProductCatalogue.class
+pageObjects\CheckOutPage.class
+abstractComponents\AbstractComponents.class

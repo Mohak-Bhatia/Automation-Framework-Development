@@ -1,0 +1,42 @@
+name: selenium-grid
+
+# Set SELENIUM_IMAGE_TAG before running Compose to use a different pinned Grid release.
+services:
+  selenium-hub:
+    image: selenium/hub:${SELENIUM_IMAGE_TAG:-4.48.0-20260905}
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+
+  chrome:
+    image: selenium/node-chrome:${SELENIUM_IMAGE_TAG:-4.48.0-20260905}
+    platform: linux/amd64
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      SE_EVENT_BUS_HOST: selenium-hub
+      SE_NODE_MAX_SESSIONS: 1
+      SE_NODE_OVERRIDE_MAX_SESSIONS: "true"
+
+  edge:
+    image: selenium/node-edge:${SELENIUM_IMAGE_TAG:-4.48.0-20260905}
+    platform: linux/amd64
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      SE_EVENT_BUS_HOST: selenium-hub
+      SE_NODE_MAX_SESSIONS: 1
+      SE_NODE_OVERRIDE_MAX_SESSIONS: "true"
+
+  firefox:
+    image: selenium/node-firefox:${SELENIUM_IMAGE_TAG:-4.48.0-20260905}
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      SE_EVENT_BUS_HOST: selenium-hub
+      SE_NODE_MAX_SESSIONS: 1
+      SE_NODE_OVERRIDE_MAX_SESSIONS: "true"

@@ -33,6 +33,17 @@ public class AbstractComponents {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(t));
 	}
 	
+	public void WaitForElementToBeClickable(By findBy) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(findBy));
+	}
+	
+	public void ElementToBePresent(By findBy) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(
+			    ExpectedConditions.presenceOfElementLocated(findBy));
+	}
+	
 	public void Scroll(int horizontal,int vertical) {
 		js.executeScript("window.scrollBy(" + horizontal + "," + vertical + ")");
 		

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,6 +29,15 @@ public class CartPage extends AbstractComponents {
 	WebElement GoToCartButton;
 	//click cart
 	public void GoToCart() {
+		
+		ElementToBePresent(By.xpath("//button[@routerlink='/dashboard/cart']"));
+		
+		((JavascriptExecutor) driver).executeScript(
+			    "arguments[0].scrollIntoView({block:'center'});",
+			    GoToCartButton
+			);
+		
+		WaitForElementToBeClickable(By.xpath("//button[@routerlink='/dashboard/cart']"));
 		GoToCartButton.click();
 	}
 	

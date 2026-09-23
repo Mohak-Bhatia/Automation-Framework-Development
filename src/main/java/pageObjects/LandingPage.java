@@ -1,6 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.*;
@@ -23,8 +24,8 @@ public class LandingPage extends AbstractComponents {
 	@FindBy(id="userPassword")
 	WebElement User_Password;
 	
-	@FindBy(id="login")
-	WebElement Login_Button;
+	@FindBy(id = "login")
+	WebElement loginButton;
 	
 //	@FindBy(xpath="//div[@class='toast-bottom-right toast-container']")
 	@FindBy(css="[class*='flyInOut']")
@@ -36,9 +37,19 @@ public class LandingPage extends AbstractComponents {
 	}
 	
 	public ProductCatalogue Login(String Email,String Password) {
+		WaitForDuration(2);
 		User_Email.sendKeys(Email);
 		User_Password.sendKeys(Password);
-		Login_Button.click();
+		
+		ElementToBePresent(By.id("login"));
+		
+		((JavascriptExecutor) driver).executeScript(
+			    "arguments[0].scrollIntoView({block:'center'});",
+			    loginButton
+			);
+		
+		WaitForElementToBeClickable(By.id("login"));
+		loginButton.click();
 		return new ProductCatalogue(driver);
 	}
 	

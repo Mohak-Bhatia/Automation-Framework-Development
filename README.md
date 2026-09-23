@@ -43,3 +43,35 @@ Engineered a robust, enterprise-grade test automation framework leveraging **Sel
 
 ---
 
+## Selenium Grid with Docker
+
+The project includes a self-contained Selenium Grid for concurrent Chrome, Edge, and Firefox execution. Each browser has a dedicated node and the Grid TestNG suite starts all three browser runs in parallel.
+
+1. Start Docker Desktop, then bring up the Grid from the project root:
+
+   ```bash
+   docker compose up -d
+   ```
+
+2. Wait until the Grid shows all three nodes at [http://localhost:4444/ui](http://localhost:4444/ui).
+
+3. Run the parallel cross-browser suite:
+
+   ```bash
+   mvn clean test -PGrid
+   ```
+
+The Grid endpoint defaults to `http://localhost:4444`. Override it for a remote Grid with `-Dgrid.url=http://host:4444`. Set `-Dheadless=false` if visible browser sessions are required.
+
+To add capacity for more simultaneous tests, scale a node before running the suite, for example:
+
+```bash
+docker compose up -d --scale chrome=2 --scale edge=2 --scale firefox=2
+```
+
+Stop the Grid when finished:
+
+```bash
+docker compose down
+```
+
